@@ -1,0 +1,22 @@
+
+
+button.mbtn {
+    float: right;
+    padding:0.6em 2em;
+    border-radius: 8px;
+    color:#fff;
+    background-color:#1976d2;
+    font-size:1.1em;
+    border:0;
+    margin:1em;
+  }
+
+
+  table {
+    border-collapse: collapse;
+}
+
+tr {
+    /*border-top: 1px solid grey;*/
+    border-bottom: 1px solid grey;
+}

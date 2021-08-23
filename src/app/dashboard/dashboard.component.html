@@ -1,0 +1,42 @@
+
+<nav class="navbar navbar-expand-sm bg-light">
+	<ul class="navbar-nav">
+	  <li class="nav-item">
+		<button class="btn btn-link" routerLink="dashboard" >Dashboard</button>
+	  </li>
+	  <li class="nav-item">
+		<button class="btn btn-link" routerLink="logout" >logout</button>
+	  </li>
+	</ul>
+  </nav>
+  <br>
+
+<button class="mbtn blue">User</button>
+<!-- <button class="mbtn blue" (click)="logoutbtn()">Logout</button><br><br><br><br> -->
+
+
+	<button (click)="addTable()">Add Row</button> <br> <br>
+	<table class="table table-stripped">
+		<tr>
+			<th>Serial Number</th>
+			<th>Email</th>
+			<th>FullName</th>
+			<th></th>
+		</tr>
+		<tr *ngFor="let item of row; let i = index">
+			<td>{{item.serialnumber}}</td>
+			<td>{{item.email}}</td>
+			<td>{{item.fullname}}</td>
+			<td> <button (click) = "deleteRow(i)">Delete</button></td>
+			<td>
+			    <button *ngIf="enableEdit && enableEditIndex == i" (click)="enableEdit=false" class="btn page-secondary-action-btn" ng-click="cancel()">Cancel</button>
+			    <button *ngIf="enableEdit && enableEditIndex == i" id="saveBtn" class="btn page-primary-action-btn" (click)="saveSegment()" type="submit">Save</button>
+			    <a href="#" class="table-row-action edit-action" *ngIf="!enableEdit" (click)="enableEditMethod($event, i)">Edit</a>
+			  	
+			</td>
+		</tr>
+	</table>
+
+
+
+	
